@@ -17,7 +17,7 @@ def responder_mensagem(update, context):
     message.reply_text("Olá! Eu sou o seu bot. Você disse: {}".format(text))
 
 # Cria um updater passando o token do seu bot
-updater = Updater("TOKEN_DO_SEU_BOT", use_context=True)
+updater = Updater("7194498887:AAGjbUB1OqWfY3Qus7tbGNsWsPL0URF9BfE", use_context=True)
 
 # Obtém o despachante para registrar handlers
 dispatcher = updater.dispatcher
