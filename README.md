@@ -16,24 +16,26 @@ def responder_mensagem(update, context):
     # Responde com uma mensagem pré-definida
     message.reply_text("Olá! Eu sou o seu bot. Você disse: {}".format(text))
 
-# Cria um updater passando o token do seu bot
-updater = Updater("7194498887:AAGjbUB1OqWfY3Qus7tbGNsWsPL0URF9BfE", use_context=True)
+def main():
+    # Substitua "TOKEN_DO_SEU_BOT" pelo seu token de acesso
+    token = "7194498887:AAGjbUB1OqWfY3Qus7tbGNsWsPL0URF9BfE"
+    # Cria um updater passando o token do seu bot
+    updater = Updater(token, use_context=True)
 
-# Obtém o despachante para registrar handlers
-dispatcher = updater.dispatcher
+    # Obtém o despachante para registrar handlers
+    dispatcher = updater.dispatcher
 
-# Cria um handler para responder mensagens de texto
-mensagem_handler = MessageHandler(Filters.text & ~Filters.command, responder_mensagem)
+    # Cria um handler para responder mensagens de texto
+    mensagem_handler = MessageHandler(Filters.text & ~Filters.command, responder_mensagem)
 
-# Registra o handler no despachante
-dispatcher.add_handler(mensagem_handler)
+    # Registra o handler no despachante
+    dispatcher.add_handler(mensagem_handler)
 
-# Inicia o bot
-updater.start_polling()
+    # Inicia o bot
+    updater.start_polling()
 
-# Mantém o bot em execução até que Ctrl+C seja pressionado
-updater.idle()
-<!---
-Cleitinho1/Cleitinho1 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+    # Mantém o bot em execução até que Ctrl+C seja pressionado
+    updater.idle()
+
+if __name__ == "__main__":
+    main()
